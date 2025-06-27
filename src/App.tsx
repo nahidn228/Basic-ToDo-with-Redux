@@ -1,11 +1,12 @@
+import { Outlet } from "react-router";
 import { Button } from "./components/ui/button";
 
 function App() {
   return (
-    <>
-      <h1>Basic Todo With Redux</h1>
-      <Button>Test</Button>
-    </>
+    <div>
+      <h1>Basic Todo With Redux</h1> <Button>Test</Button>
+      <Outlet />
+    </div>
   );
 }
 
