@@ -21,7 +21,7 @@ const router = createBrowserRouter([
         Component: Tasks,
       },
       {
-        path: "/user",
+        path: "/users",
         Component: User,
       },
     ],

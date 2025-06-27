@@ -1,10 +1,10 @@
 import { Outlet } from "react-router";
-import { Button } from "./components/ui/button";
+import Navbar from "./components/layout/Navbar";
 
 function App() {
   return (
     <div>
-      <h1>Basic Todo With Redux</h1> <Button>Test</Button>
+      <Navbar />
       <Outlet />
     </div>
   );
