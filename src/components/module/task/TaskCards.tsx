@@ -22,7 +22,7 @@ const TaskCards = ({ task }: IProps) => {
           ></div>
           <h1>{task.title}</h1>
         </div>
-        <div className="flex gap-3 item-center">
+        <div className=" gap-3 item-center ">
           <Button variant="link" className="p-0 text-red-500">
             <Trash2 />{" "}
           </Button>
