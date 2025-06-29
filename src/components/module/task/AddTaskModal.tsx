@@ -32,14 +32,20 @@ import {
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
 import { cn } from "@/lib/utils";
+import { addTask } from "@/redux/features/task/taskSlice";
+import { useAppDispatch } from "@/redux/hook";
 import { format } from "date-fns";
 import { CalendarIcon } from "lucide-react";
 import { useForm } from "react-hook-form";
 
 export function AddTaskModal() {
   const form = useForm();
+
+  const dispatch = useAppDispatch();
+
   const onSubmit = (data) => {
     console.log(data);
+    dispatch(addTask(data));
   };
   return (
     <Dialog>
@@ -85,17 +91,18 @@ export function AddTaskModal() {
                 control={form.control}
                 name="priority"
                 render={({ field }) => (
-                  <FormItem >
+                  <FormItem>
                     <FormLabel>Priority</FormLabel>
                     <Select
-                    
                       onValueChange={field.onChange}
                       defaultValue={field.value}
-                      
                     >
                       <FormControl>
                         <SelectTrigger>
-                          <SelectValue className="w-full" placeholder="Select a Priority to set" />
+                          <SelectValue
+                            className="w-full"
+                            placeholder="Select a Priority to set"
+                          />
                         </SelectTrigger>
                       </FormControl>
                       <SelectContent>
